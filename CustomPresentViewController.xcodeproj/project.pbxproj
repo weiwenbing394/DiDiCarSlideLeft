@@ -210,7 +210,7 @@
 			name = "自定义present样式";
 			sourceTree = "<group>";
 		};
-		516057281E78E4E6006C44ED /* QQ侧滑控件 */ = {
+		516057281E78E4E6006C44ED /* 滴滴打车侧滑控件 */ = {
 			isa = PBXGroup;
 			children = (
 				519148CB1E7B7B63004254E5 /* LeftSlideViewController.h */,
@@ -218,6 +218,7 @@
 				516057431E78EDA7006C44ED /* UIView_extra.h */,
 				516057441E78EDA7006C44ED /* UIView_extra.m */,
 			);
+			name = "滴滴打车侧滑控件";
 			path = "QQ侧滑控件";
 			sourceTree = "<group>";
 		};
@@ -370,7 +371,7 @@
 		51F182851E77C96E00A41652 /* Tool */ = {
 			isa = PBXGroup;
 			children = (
-				516057281E78E4E6006C44ED /* QQ侧滑控件 */,
+				516057281E78E4E6006C44ED /* 滴滴打车侧滑控件 */,
 				516057271E78E4A6006C44ED /* 自定义present样式 */,
 			);
 			path = Tool;

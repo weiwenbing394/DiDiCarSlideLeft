@@ -36,6 +36,8 @@
         self.speedf = vSpeedFloat;
         self.leftVC = leftVC;
         self.mainVC = mainVC;
+        [self addChildViewController:self.mainVC];
+        [self addChildViewController:self.leftVC];
         
         //滑动手势
         self.pan = [[UIPanGestureRecognizer alloc]initWithTarget:self action:@selector(handlePan:)];
@@ -51,12 +53,17 @@
         self.contentView = view;
         [self.mainVC.view addSubview:view];
         
+        //主视图
+        self.mainVC.view.frame=self.view.bounds;
+        
         //获取左侧tableview
         self.leftTableview=self.leftVC.view;
         self.leftTableview.frame=CGRectMake(-(kScreenWidth-kLeftPageDistance), 0, kScreenWidth-kLeftPageDistance, kScreenHeight);
         
         [self.view addSubview:self.mainVC.view];
         [self.view addSubview:self.leftVC.view];
+        [self.mainVC didMoveToParentViewController:self];
+        [self.leftVC didMoveToParentViewController:self];
         self.closed = YES;//初始时侧滑窗关闭
         
     }
@@ -183,5 +190,35 @@
     [self.pan setEnabled:enabled];
 }
 
+/**
+ *  弹出presentViewController
+ */
+- (void)sliderViewControllerPresntViewController:(UIViewController *)topViewController animatd:(BOOL)aanimated{
+    if (topViewController==nil) {
+        return;
+    }
+    //滴滴打车样式
+    [self presentViewController:topViewController animated:aanimated completion:nil];
+    //腾讯qq样式
+    //    UITabBarController *tabbar=(UITabBarController *)self.mainVC;
+    //    [tabbar.selectedViewController presentViewController:topViewController animated:aanimated completion:^{
+    //        [self closeLeftView];
+    //    }];
 
+};
+
+/**
+ *  push一个viewcontroller
+ */
+- (void)sliderViewControllerPushViewController:(UIViewController *)topViewController animatd:(BOOL)aanimated{
+    if (topViewController==nil) {
+        return;
+    }
+    //滴滴打车样式
+    [self.navigationController pushViewController:topViewController animated:aanimated];
+    //腾讯QQ样式
+    //    [self closeLeftView];
+    //    UITabBarController *tabbar=(UITabBarController *)self.mainVC;
+    //    [tabbar.selectedViewController pushViewController:topViewController animated:aanimated];
+};
 @end

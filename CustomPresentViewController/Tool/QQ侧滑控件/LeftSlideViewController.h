@@ -69,4 +69,14 @@
  */
 - (void)setPanEnabled: (BOOL) enabled;
 
+/**
+ *  弹出presentViewController
+ */
+- (void)sliderViewControllerPresntViewController:(UIViewController *)topViewController animatd:(BOOL)aanimated;
+
+/**
+ *  push一个viewcontroller
+ */
+- (void)sliderViewControllerPushViewController:(UIViewController *)topViewController animatd:(BOOL)aanimated;
+
 @end

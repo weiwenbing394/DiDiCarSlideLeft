@@ -82,12 +82,7 @@
     vc.hidesBottomBarWhenPushed = YES;
     
     AppDelegate *tempAppDelegate =KEYAPPDELEGATE;
-    //滴滴打车样式
-    [tempAppDelegate.LeftSlideVC.navigationController pushViewController:vc animated:YES];
-    //腾讯QQ样式
-//    [tempAppDelegate.LeftSlideVC closeLeftView];
-//    UITabBarController *tabbar=(UITabBarController *)tempAppDelegate.LeftSlideVC.mainVC;
-//    [tabbar.selectedViewController pushViewController:vc animated:NO];
+    [tempAppDelegate.LeftSlideVC sliderViewControllerPushViewController:vc animatd:YES];
 }
 
 - (CGFloat)tableView:(UITableView *)tableView heightForHeaderInSection:(NSInteger)section
@@ -128,14 +123,7 @@
     vc.startFrame=rect;
     
     AppDelegate *tempAppDelegate = KEYAPPDELEGATE;
-    //滴滴打车样式
-    [tempAppDelegate.LeftSlideVC presentViewController:vc animated:YES completion:^{
-    }];
-    //腾讯qq样式
-//    UITabBarController *tabbar=(UITabBarController *)tempAppDelegate.LeftSlideVC.mainVC;
-//    [tabbar.selectedViewController presentViewController:vc animated:NO completion:^{
-//        [tempAppDelegate.LeftSlideVC closeLeftView];
-//    }];
+    [tempAppDelegate.LeftSlideVC sliderViewControllerPresntViewController:vc animatd:YES];
 }
 
 
